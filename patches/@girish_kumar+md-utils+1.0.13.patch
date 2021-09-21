@@ -1,0 +1,26 @@
+diff --git a/node_modules/@girish_kumar/md-utils/dist/index.cjs b/node_modules/@girish_kumar/md-utils/dist/index.cjs
+index ace487f..201e53c 100644
+--- a/node_modules/@girish_kumar/md-utils/dist/index.cjs
++++ b/node_modules/@girish_kumar/md-utils/dist/index.cjs
+@@ -46,9 +46,9 @@ const cache = new LRUCache__default['default']({
+  */
+ const remarkCodeBlockShiki = () => {
+     return async (tree) => {
+-        const { htmlEscape } = await Promise.resolve().then(function () { return /*#__PURE__*/_interopNamespace(require('escape-goat')); });
+-        const shiki = await Promise.resolve().then(function () { return /*#__PURE__*/_interopNamespace(require('shiki')); });
+-        const unistUtil = await Promise.resolve().then(function () { return /*#__PURE__*/_interopNamespace(require('unist-util-visit')); });
++        const { htmlEscape } = await import('escape-goat');
++        const shiki = await import('shiki');
++        const unistUtil = await import('unist-util-visit');
+         const theme = await shiki.loadTheme(path__namespace.resolve(__dirname, 'base16.json'));
+         const themename = 'base16';
+         const highlighter = await shiki.getHighlighter({ theme });
+@@ -123,7 +123,7 @@ const remarkCodeBlockShiki = () => {
+ };
+ 
+ const rehypeRemovePreWrapper = () => async (tree) => {
+-    const { visit } = await Promise.resolve().then(function () { return /*#__PURE__*/_interopNamespace(require('unist-util-visit')); });
++    const { visit } = await import('unist-util-visit');
+     visit(tree, { type: 'element', tagName: 'pre' }, (node, index, parent) => {
+         if ((parent === null || parent === void 0 ? void 0 : parent.type) !== 'element')
+             return;

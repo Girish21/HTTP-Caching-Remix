@@ -1,6 +1,9 @@
 import { bundleMDX } from 'mdx-bundler'
 import { downloadReadme } from './github.server'
-import { remarkCodeBlockShiki } from '@girish_kumar/md-utils'
+import {
+  remarkCodeBlockShiki,
+  rehypeRemovePreWrapper,
+} from '@girish_kumar/md-utils'
 
 const bundleMd = async () => {
   const md = await downloadReadme()
@@ -19,7 +22,10 @@ const bundleMd = async () => {
         [remarkAutolinkHeading, { behavior: 'wrap' }],
         remarkCodeBlockShiki,
       ]
-      options.rehypePlugins = [...(options.rehypePlugins ?? [])]
+      options.rehypePlugins = [
+        ...(options.rehypePlugins ?? []),
+        rehypeRemovePreWrapper,
+      ]
 
       return options
     },
