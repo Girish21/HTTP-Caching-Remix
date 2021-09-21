@@ -41,7 +41,7 @@ function Document({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className='bg-gray-800'>
+      <body className='bg-gray-900'>
         {children}
 
         <Scripts />

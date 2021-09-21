@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary-text: hsl(0deg 50% 95%);
+  --code-background: hsl(0deg 0% 70% / 0.2);
+}
+
 @font-face {
   font-family: 'Poppins';
   src: url('/fonts/Poppins-Medium.ttf') format('truetype');

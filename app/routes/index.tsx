@@ -28,12 +28,10 @@ export default function Index() {
   const Component = React.useMemo(() => getMDXComponent(data.content.code), [])
 
   return (
-    <main className='max-w-[min(75ch,90%)] pt-8 mx-auto'>
-      <section className='grid grid-cols-8 lg:grid-cols-12'>
-        <article className='col-[1/-1] sm:col-[2/-2] prose lg:prose-xl'>
-          <Component />
-        </article>
-      </section>
+    <main className='max-w-[min(75ch,80%)] pt-8 mx-auto'>
+      <article className='grid grid-cols-8 lg:grid-cols-12 prose lg:prose-lg xl:prose-xl max-w-none'>
+        <Component />
+      </article>
     </main>
   )
 }
