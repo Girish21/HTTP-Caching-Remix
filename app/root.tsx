@@ -9,6 +9,20 @@ export let links: LinksFunction = () => {
     { rel: 'stylesheet', href: stylesUrl },
     { rel: 'stylesheet', href: preStyled },
     { rel: 'icon', href: '/favicon.svg' },
+    {
+      rel: 'preload',
+      as: 'font',
+      type: 'font/ttf',
+      crossOrigin: 'anonymous',
+      href: '/fonts/Poppins-Regular.ttf',
+    },
+    {
+      rel: 'preload',
+      as: 'font',
+      type: 'font/ttf',
+      crossOrigin: 'anonymous',
+      href: '/fonts/Poppins-Medium.ttf',
+    },
   ]
 }
 

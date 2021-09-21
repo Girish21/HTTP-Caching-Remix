@@ -13,7 +13,8 @@ export let meta: MetaFunction = () => {
       'Introduction to HTTP Caching and how caching works in web applications',
     'og:type': 'article',
     'og:url': 'https://divine-brook-5249.fly.dev/',
-    'og:image': 'https://divine-brook-5249.fly.dev/favicon.svg',
+    'og:image':
+      'https://res.cloudinary.com/dhtwxe58j/image/upload/v1632239439/HTTP-Caching/images_wug2en.jpg',
   }
 }
 
@@ -27,9 +28,9 @@ export default function Index() {
   const Component = React.useMemo(() => getMDXComponent(data.content.code), [])
 
   return (
-    <main>
-      <section className='m-8 grid grid-cols-8 lg:grid-cols-12'>
-        <article className='col-[1/-1] sm:col-start-2 sm:col-end-8 lg:col-start-4 lg:col-end-10 dark:text-gray-50 prose-xl'>
+    <main className='max-w-[min(75ch,90%)] pt-8 mx-auto'>
+      <section className='grid grid-cols-8 lg:grid-cols-12'>
+        <article className='col-[1/-1] sm:col-[2/-2] prose lg:prose-xl'>
           <Component />
         </article>
       </section>

@@ -1,12 +1,18 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
-  mode: "jit",
-  purge: ["./app/**/*.tsx"],
-  darkMode: "class",
+  mode: 'jit',
+  purge: ['./app/**/*.tsx'],
+  darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Poppins', ...defaultTheme.fontFamily.sans],
+      },
+    },
   },
   variants: {
     extend: {},
   },
-  plugins: [require("@tailwindcss/typography")],
-};
+  plugins: [require('@tailwindcss/typography')],
+}
