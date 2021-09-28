@@ -1,8 +1,8 @@
+import preStyled from '@girish_kumar/md-utils/styles.css'
 import { Outlet } from 'react-router-dom'
 import type { LinksFunction, MetaFunction } from 'remix'
-import { Links, LiveReload, Meta, Scripts } from 'remix'
+import { Links, LiveReload, Meta } from 'remix'
 import stylesUrl from './styles/index.css'
-import preStyled from '@girish_kumar/md-utils/styles.css'
 
 export let links: LinksFunction = () => {
   return [
@@ -44,7 +44,6 @@ function Document({ children }: { children: React.ReactNode }) {
       <body className='bg-gray-900'>
         {children}
 
-        <Scripts />
         {process.env.NODE_ENV === 'development' && <LiveReload />}
       </body>
     </html>
