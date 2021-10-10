@@ -1,6 +1,5 @@
 import * as React from 'react'
-import type { LoaderFunction, MetaFunction } from 'remix'
-import { useRouteData } from 'remix'
+import { LoaderFunction, MetaFunction, useLoaderData } from 'remix'
 import { bundleMd } from '~/utils/md.server'
 import { getMDXComponent } from 'mdx-bundler/client'
 
@@ -23,7 +22,7 @@ export let loader: LoaderFunction = async () => {
 }
 
 export default function Index() {
-  let data = useRouteData<{ content: { code: string } }>()
+  let data = useLoaderData<{ content: { code: string } }>()
 
   const Component = React.useMemo(() => getMDXComponent(data.content.code), [])
 
